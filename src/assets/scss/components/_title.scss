@@ -1,0 +1,61 @@
+h1,.h1,
+h3,.h3 {
+  font-weight: bold;
+}
+h1,.h1 {
+  font-size: 20px;
+  line-height: 30px;
+  @media #{$tablet}{
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+h2,.h2 {
+  font-size: 36px;
+  line-height: 50px;
+  @media #{$tablet}{
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+h3,.h3 {
+  font-size: 20px;
+  line-height: 30px;
+  @media #{$tablet}{
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+h4,.h4 {
+  font-size: 16px;
+  line-height: 24px;
+  @media #{$tablet}{
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+.p_large {
+  font-size: 22px;
+  line-height: 36px;
+  @media #{$tablet}{
+    font-size: 18px;
+    line-height: 32px;
+  }
+}
+.p_middle {
+  font-size: 18px;
+  line-height: 24px;
+  @media #{$tablet}{
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+.p_small {
+  font-size: 14px;
+  line-height: 20px;
+  @media #{$tablet}{
+    font-size: 12px;
+    line-height: 18px;
+  }
+}

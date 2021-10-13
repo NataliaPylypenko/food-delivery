@@ -1,0 +1,36 @@
+// fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap&subset=cyrillic-ext');
+
+// MODULES
+@import "modules/media";
+@import "modules/page-content";
+@import 'modules/reset';
+@import "modules/sidebar";
+
+// UTILS
+@import "utils/fonts";
+@import "utils/mixins";
+@import "utils/reset";
+@import "utils/vars";
+
+// BLOCKS
+@import 'blocks/calculating';
+@import 'blocks/footer';
+@import 'blocks/header';
+@import 'blocks/menu';
+@import 'blocks/offer';
+@import 'blocks/order';
+@import 'blocks/preview';
+@import 'blocks/promotion';
+@import 'blocks/sidepanel';
+
+// COMPONENTS
+@import 'components/buttons';
+@import 'components/main';
+@import 'components/menu';
+@import 'components/sidepanel';
+@import 'components/title';
+
+// LIBS
+
+// PAGES

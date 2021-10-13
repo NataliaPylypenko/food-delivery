@@ -1,0 +1,46 @@
+.order {
+    padding: 50px 0 60px;
+    @media #{$mobile}{
+        padding: 30px 0 60px;
+    }
+    .title {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    &__form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 100px 0;
+        @media #{$desktopMax} {
+            padding: 0 50px;
+        }
+        @media #{$tablet} {
+            flex-direction: column;
+        }
+        img {
+            transform: scale(1.5);
+        }
+    }
+    &__input {
+        width: 280px;
+        height: 50px;
+        background: #FFF;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        border: none;
+        text-align: center;
+        padding: 0 20px;
+        outline: none;
+        @media #{$laptop} {
+            width: 240px;
+        }
+        @media #{$tablet} {
+            margin-bottom: 30px;
+        }
+    }
+    &__arrow {
+        @media #{$tablet} {
+            margin-bottom: 30px;
+        }
+    }
+}

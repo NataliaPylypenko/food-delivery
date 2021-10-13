@@ -1,0 +1,49 @@
+// Media query breakpoints
+$desktopMax-plus:   (min-width: 1495px);
+$desktop:     		(min-width: 1200px);
+$tablet-plus: 		(min-width: 992px);
+
+$desktopMax:     	(max-width: 1494px);
+$laptop:      		(max-width: 1199px);
+$tablet:      		(max-width: 991px);
+$mobile:      		(max-width: 767px);
+$mobile-sm:   		(max-width: 575px);
+
+
+@media #{$desktopMax-plus}{
+	.container {
+	    max-width: 1320px;
+	}
+}
+@media #{$desktopMax}{
+	.container {
+		max-width: 1140px;
+	}
+}
+@media #{$laptop}{
+	.container {
+	    max-width: 960px;
+	}
+}
+@media #{$tablet}{
+	.container {
+	    max-width: 720px;
+	}
+}
+@media #{$mobile}{
+	.container {
+		max-width: 320px;
+	}
+}
+
+.container {
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+	@media #{$mobile}{
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+}

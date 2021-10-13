@@ -1,0 +1,88 @@
+.promotion {
+    padding: 70px 0 100px;
+    position: relative;
+    @media #{$mobile}{
+        padding: 30px 0 60px;
+    }
+    .container {
+        display: flex;
+        @media #{$tablet}{
+            flex-direction: column;
+        }
+    }
+    .bgc_hot {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        bottom: 60px;
+        width: 53vw;
+        background: lighten($bgHot, 15%);
+        z-index: -1;
+        @media #{$mobile}{
+            display: none;
+        }
+    }
+    &__text {
+        width: 50%;
+        @media #{$tablet}{
+            width: 100%;
+            margin-bottom: 30px;
+        }
+    }
+    .title {
+        margin-bottom: 40px;
+    }
+    &__descr {
+        padding-right: 40px;
+    }
+    &__timer {
+        width: 50%;
+        @media #{$tablet}{
+            width: 100%;
+            max-width: 540px;
+            align-self: flex-end;
+        }
+        @media #{$mobile}{
+            align-self: unset;
+        }
+        .title {
+            text-align: right;
+            margin-bottom: 60px;
+            @media #{$tablet}{
+                margin-bottom: 30px;
+            }
+        }
+        .timer {
+            padding-left: 95px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @media #{$laptop} {
+                padding-left: 0;
+            }
+            &__block {
+                width: 102px;
+                height: 120px;
+                background: #FFF;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+                line-height: unset;
+                text-align: center;
+                @media #{$mobile}{
+                    width: 60px;
+                    height: 90px;
+                }
+                span {
+                    display: block;
+                    margin-top: 20px;
+                    margin-bottom: 5px;
+                    font-size: 56px;
+                    font-weight: bold;
+                    @media #{$mobile}{
+                        font-size: 42px;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

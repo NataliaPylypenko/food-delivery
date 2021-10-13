@@ -1,0 +1,22 @@
+// page-contenet style
+
+.page-content {
+  height: auto;
+  min-height: 100%;
+}
+.page-content {
+  padding-top: 100px;
+  padding-bottom: 318px;
+  @media ($desktopMax){
+    padding-bottom: 378px;
+  }
+  @media #{$tablet}{
+    padding-bottom: 349px;
+  }
+  @media #{$mobile}{
+    padding-bottom: 469px;
+  }
+  @media only screen and (max-width : 480px){
+    padding-bottom: 485px;
+  }
+}
