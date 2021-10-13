@@ -22,4 +22,4 @@ npm run dev
 npm run build
 ```
 
-* Production - https://nataliapylypenko.github.io/good-food/dist
+* Production - https://nataliapylypenko.github.io/food-delivery/
