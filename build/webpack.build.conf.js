@@ -1,9 +1,12 @@
-const merge = require('webpack-merge') // webpack-merge нужен чтобы разбивать отделять билд и дев разработку
-const baseWebpackConfig = require('./webpack.base.conf') // подключаем базовий файл конфига
+const merge = require('webpack-merge')
+const baseWebpackConfig = require('./webpack.base.conf')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const buildWebpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
-  plugins: []
+  plugins: [
+    new CleanWebpackPlugin(),
+  ]
 })
 
 module.exports = new Promise((resolve, reject) => {

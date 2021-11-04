@@ -22,7 +22,7 @@ module.exports = {
   },
 
   output: {
-    filename: `${PATHS.assets}js/[name].[hash].js`,
+    filename: `${PATHS.assets}js/[name].[chunkhash].js`,
     path: PATHS.dist,
     /*
       publicPath: '/' - relative path for dist folder (js,css etc)
@@ -107,11 +107,10 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `${PATHS.assets}css/[name].[hash].css`,
+      filename: `${PATHS.assets}css/[name].[contenthash].css`,
     }),
 
     new CopyWebpackPlugin([
-      // копируем откуда и куда
       { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
       { from: `${PATHS.src}/static`, to: '' },
