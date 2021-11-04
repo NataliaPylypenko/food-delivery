@@ -1,45 +1,34 @@
-// подключаем path отдельным модулем, а не используем встроенный в node.js
 const path = require('path')
 const fs = require('fs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-// Разделяем конфиги в package.json: 1. Merge; 2. ENV;
-
-// Main const
-// с такой структурой можно будет изменить название путей и автоматически поменяются названия папок
 const PATHS = {
   src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../dist'), // здесь можем поменять название папки
   assets: 'assets/' // и здесь
 }
 
-// Pages const for HtmlWebpackPlugin
-// const PAGES_DIR = PATHS.src
 const PAGES_DIR = PATHS.src
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.html'))
 
 module.exports = {
-  // для получения константы PATHS из других конфигов
   externals: {
-    // как называем: что именно
     paths: PATHS
   },
-  // точка входа
   entry: {
-    // module: `${PATHS.src}/your-module.js`,
-    app: PATHS.src, // путь к входному файлу js
+    app: PATHS.src,
   },
-  // точка выхода
+
   output: {
-    filename: `${PATHS.assets}js/[name].[hash].js`, //текущий name ссылается на ярлык app, вместо name подставляется app
+    filename: `${PATHS.assets}js/[name].[hash].js`,
     path: PATHS.dist,
     /*
       publicPath: '/' - relative path for dist folder (js,css etc)
       publicPath: './' (dot before /) - absolute path for dist folder (js,css etc)
     */
-    publicPath: '/'
+    publicPath: './'
   },
   optimization: {
     splitChunks: {
@@ -55,13 +44,11 @@ module.exports = {
   },
   module: {
     rules: [
-      // JavaScript
       {
-        test: /\.js$/, // берем все .js файлы
-        loader: 'babel-loader', //обрабатываем babel-loader
-        exclude: '/node_modules/' // кроме node_modules
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: '/node_modules/'
       },
-      // Fonts
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader',
@@ -69,15 +56,13 @@ module.exports = {
           name: '[name].[ext]'
         }
       },
-      // images / icons
       {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]' // разширение .ext берется з test
+          name: '[name].[ext]'
         }
       },
-      // обрабатываем .scss файлы
       {
         test: /\.scss$/,
         use: [
@@ -97,7 +82,6 @@ module.exports = {
           }
         ]
       },
-      // обрабатываем .css файлы
       {
         test: /\.css$/,
         use: [
@@ -130,10 +114,9 @@ module.exports = {
       // копируем откуда и куда
       { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
-      { from: `${PATHS.src}/static`, to: '' }, // файли из src/static должны попадать в dist и храниться в корне проекта
+      { from: `${PATHS.src}/static`, to: '' },
     ]),
 
-    // Automatic creation any html pages (Don't forget to RERUN dev server!)
     ...PAGES.map(
       page =>
       new HtmlWebpackPlugin({

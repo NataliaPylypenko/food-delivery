@@ -1,18 +1,21 @@
 {
-  "name": "webpacktemplate",
+  "name": "food-delivery",
   "version": "1.0.0",
-  "description": "webpack + pug",
+  "homepage": "food-delivery",
+  "description": "food-delivery",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --open --config ./build/webpack.dev.conf.js",
     "build": "webpack --config ./build/webpack.build.conf.js",
-    "watch": "webpack-dev-server --open --config ./build/webpack.dev.conf.js --watch"
+    "watch": "webpack-dev-server --open --config ./build/webpack.dev.conf.js --watch",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
   },
   "browserslist": [
     "> 1%",
     "last 3 version"
   ],
-  "author": "https://github.com/vedees",
+  "author": "https://github.com/NataliaPylypenko",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.15.8",
@@ -34,5 +37,8 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "gh-pages": "^3.2.3"
   }
 }
