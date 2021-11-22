@@ -35,41 +35,21 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // create an object and immediately call the render method
-    new MenuCard(
-        "assets/img/tabs/vegy.jpg",
-        "vegy",
-        'Меню "Фитнес"',
-        'Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!',
-        9,
-        '.menu .container .menu__items',
-        'menu__item'
-    ).render();
-    new MenuCard(
-        "assets/img/tabs/elite.jpg",
-        "elite",
-        'Меню "Премиум"',
-        'В меню “Премиум” мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!',
-        12,
-        '.menu .container .menu__items',
-        'menu__item'
-    ).render();
-    new MenuCard(
-        "assets/img/tabs/post.jpg",
-        "post",
-        'Меню "Постное"',
-        'Меню “Постное” - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков.',
-        15,
-        '.menu .container .menu__items',
-        'menu__item'
-    ).render();
-    new MenuCard(
-        "assets/img/tabs/hamburger.jpg",
-        "hamburger",
-        'Меню "Сбалансированное"',
-        'Меню "Сбалансированное" - это соответствие вашего рациона всем научным рекомендациям. Мы тщательно просчитываем вашу потребность в к/б/ж/у и создаем лучшие блюда для вас.',
-        18,
-        '.menu .container .menu__items',
-        'menu__item'
-    ).render();
+    const getResource = async (url) => {
+        const res = await fetch(url);
+
+        if(!res.ok) {
+            throw new Error(`Could not fetch ${url}, status: ${res.status}`)
+        }
+
+        return res.json();
+    }
+
+    getResource('http://localhost:3000/menu')
+        .then(data => {
+            // use the syntax for object destructuring
+            data.forEach(({src, alt, title, descr, price}) => {
+               new MenuCard(src, alt, title, descr, price, '.menu .container .menu__items', 'menu__item').render();
+            });
+        });
 })

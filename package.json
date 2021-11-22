@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "homepage": "food-delivery",
   "description": "food-delivery",
-  "main": "index.js",
+  "main": "./index.js",
   "scripts": {
     "dev": "webpack-dev-server --open --config ./build/webpack.dev.conf.js",
     "build": "webpack --config ./build/webpack.build.conf.js",
@@ -19,6 +19,7 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.15.8",
+    "@babel/plugin-transform-runtime": "^7.16.4",
     "@babel/preset-env": "^7.15.8",
     "autoprefixer": "^9.8.8",
     "babel-loader": "^8.2.2",
@@ -29,6 +30,7 @@
     "cssnano": "^4.1.11",
     "file-loader": "^4.3.0",
     "html-webpack-plugin": "^3.2.0",
+    "json-server": "^0.17.0",
     "mini-css-extract-plugin": "^0.8.2",
     "node-sass": "^4.14.1",
     "postcss-loader": "^3.0.0",
@@ -40,6 +42,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "@babel/runtime": "^7.16.3",
     "gh-pages": "^3.2.3"
   }
 }

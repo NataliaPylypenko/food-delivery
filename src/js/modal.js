@@ -1,8 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
 
     const modalTrigger = document.querySelectorAll('[data-modal]'),
-        modal = document.querySelector('.modal'),
-        modalCloseBtn = document.querySelector('[data-close]');
+        modal = document.querySelector('.modal');
 
     function openModal() {
         modal.classList.toggle('show');
@@ -16,15 +15,13 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     // close modal
-    // 1) by clicking on the cross
-    modalCloseBtn.addEventListener('click', closeModal);
-    // 2) by clicking outside modal
+    // 1) by clicking outside modal
     modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
+        if (e.target === modal || e.target.getAttribute('data-close') == '') {
             closeModal();
         }
     });
-    // 3) by clicking Escape
+    // 2) by clicking Escape
     document.addEventListener('keydown', (e) => {
         if (e.code === "Escape" && modal.classList.contains('show')) {
             closeModal();
