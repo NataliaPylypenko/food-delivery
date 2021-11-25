@@ -21,4 +21,8 @@ npm run dev
 
 # Output will be at dist/ folder
 npm run build
+
+# To run the project locally, enter at different terminals
+npm run watch
+json-server db.json
 ```
