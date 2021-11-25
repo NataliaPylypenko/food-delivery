@@ -1,4 +1,6 @@
-window.addEventListener('DOMContentLoaded', () => {
+import {getResource} from "../services/getResource";
+
+function cards() {
 
     class MenuCard {
         constructor(src, alt, title, descr, price, parentSelector, ...classes) {
@@ -35,16 +37,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    const getResource = async (url) => {
-        const res = await fetch(url);
-
-        if(!res.ok) {
-            throw new Error(`Could not fetch ${url}, status: ${res.status}`)
-        }
-
-        return res.json();
-    }
-
     getResource('http://localhost:3000/menu')
         .then(data => {
             // use the syntax for object destructuring
@@ -52,4 +44,6 @@ window.addEventListener('DOMContentLoaded', () => {
                new MenuCard(src, alt, title, descr, price, '.menu .container .menu__items', 'menu__item').render();
             });
         });
-})
+}
+
+export default cards;

@@ -1,6 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => {
-    // Timer
-    const deadline = '2021-12-10';
+function timer(id, deadline) {
 
     function getTimeRemaining(endtime) {
         const t = Date.parse(endtime) - Date.parse(new Date()),
@@ -52,5 +50,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     }
 
-    setClock('.timer', deadline);
-})
+    setClock(id, deadline);
+}
+
+export default timer;

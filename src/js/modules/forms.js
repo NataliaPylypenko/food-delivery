@@ -1,5 +1,8 @@
-window.addEventListener('DOMContentLoaded', () => {
-    const  forms = document.querySelectorAll("form");
+import {openModal, closeModal} from "./modal";
+import {postData} from "../services/postData";
+
+function forms(formSelector) {
+    const  forms = document.querySelectorAll(formSelector);
 
     // messages to the user
     const message = {
@@ -13,22 +16,6 @@ window.addEventListener('DOMContentLoaded', () => {
         bindPostData(item);
     });
 
-    // data posting
-    const postData = async (url, data) => {
-        // внутри делаем запрос
-        // при этом можем сразу обработать те данные, которые пришли
-        // помещаем промис, который возвращается от fetch
-        const res = await fetch(url, {
-            method: "POST", // каким образом
-            headers: { // что именно
-                'Content-type': 'application/json'
-            },
-            body: data
-        });
-        // res промис, обработаем его как json-формат
-        return await res.json();
-    }
-
     // posting data binding
     function bindPostData(form) {
         form.addEventListener('submit', (e) => {
@@ -36,10 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
             let statusMessage = document.createElement('img');
             statusMessage.src = message.loading;
-            statusMessage.style.cssText= `
-                display: block;
-                margin: 20px auto 0;
-            `;
+            statusMessage.classList.add("spiner-position")
 
             form.insertAdjacentElement('afterend', statusMessage);
 
@@ -67,7 +51,8 @@ window.addEventListener('DOMContentLoaded', () => {
     function showThanksModal(message) {
         const prevModalDialog = document. querySelector('.modal__dialog');
         prevModalDialog.classList.add('hide');
-        openModal();
+        openModal('.modal');
+
         const thanksModal = document.createElement('div');
         thanksModal.classList.add('modal__dialog');
         thanksModal.innerHTML = `
@@ -80,9 +65,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
         setTimeout(() => {
             thanksModal.remove();
-            prevModalDialog.classList.add('show');
+            // prevModalDialog.classList.add('show');
             prevModalDialog.classList.remove('hide');
-            closeModal();
+            closeModal('.modal');
         }, 4000)
     }
-})
+}
+
+export default forms;
