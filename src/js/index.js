@@ -1,4 +1,5 @@
 // Main js file
+import calculator from './modules/calculator';
 import cards from './modules/cards';
 import forms from './modules/forms';
 import modal from './modules/modal';
@@ -10,6 +11,7 @@ import {openModal} from "./modules/modal";
 
 window.addEventListener('DOMContentLoaded', () => {
 
+    calculator();
     cards();
     forms('form');
     modal('[data-modal]', '.modal');
@@ -24,7 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
         field: '.offer__slider-inner'
     });
     tabs('.tabheader__item', '.tabheader__items', '.tabcontent', 'tabheader__item_active');
-    timer('.timer', '2021-12-10');
+    timer('.timer', '2021-12-31');
 
 })
 
