@@ -4,8 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Food delivery">
+        <link href="./favicon.ico" rel="icon" >
         <title>Food delivery</title>
-    <link href="./assets/css/app.5a9c77c8f2cd732a61fe.css" rel="stylesheet"></head>
+    <link href="/assets/css/app.b6943e8cc51f963f3c11.css" rel="stylesheet"></head>
 
     <body class="index-page">
 
@@ -105,27 +106,29 @@
                             <div class="offer__slider-prev">
                                 <img src="assets/img/icons/left.svg" alt="prev">
                             </div>
-                            <span id="current">03</span>
+                            <span id="current"></span>
                             /
-                            <span id="total">04</span>
+                            <span id="total"></span>
                             <div class="offer__slider-next">
                                 <img src="assets/img/icons/right.svg" alt="next">
                             </div>
                         </div>
 
                         <div class="offer__slider-wrapper">
-                            <div class="offer__slide">
-                                <img src="assets/img/slider/pepper.jpg" alt="pepper">
+                            <div class="offer__slider-inner">
+                                <div class="offer__slide">
+                                    <img src="assets/img/slider/pepper.jpg" alt="pepper">
+                                </div>
+                                <div class="offer__slide">
+                                    <img src="assets/img/slider/food-12.jpg" alt="food">
+                                </div>
+                                <div class="offer__slide">
+                                    <img src="assets/img/slider/olive-oil.jpg" alt="oil">
+                                </div>
+                                <div class="offer__slide">
+                                    <img src="assets/img/slider/paprika.jpg" alt="paprika">
+                                </div>
                             </div>
-                            <!-- <div class="offer__slide">
-                                <img src="assets/img/slider/food-12.jpg" alt="food">
-                            </div>
-                            <div class="offer__slide">
-                                <img src="assets/img/slider/olive-oil.jpg" alt="oil">
-                            </div>
-                            <div class="offer__slide">
-                                <img src="assets/img/slider/paprika.jpg" alt="paprika">
-                            </div> -->
                         </div>
 
                     </div>
@@ -138,18 +141,16 @@
 
         <div class="calculating">
             <div class="container">
-                <h2 class="title">Рассчитаем вашу потребность в калориях?
-                </h2>
+                <h2 class="title">Рассчитаем вашу потребность в калориях?</h2>
                 <div class="calculating__field">
                     <h3 class="calculating__subtitle">
                         Ваш пол
                     </h3>
                     <div class="calculating__choose" id="gender">
                         <div class="calculating__choose-block">
-                            <div class="p_small calculating__choose-item gender calculating__choose-item_active">Женщина</div>
-                            <div class="p_small calculating__choose-item gender">Мужчина</div>
+                            <div id="female" class="p_small calculating__choose-item gender">Женщина</div>
+                            <div id="male" class="p_small calculating__choose-item gender">Мужчина</div>
                         </div>
-
                     </div>
 
                     <h3 class="calculating__subtitle">
@@ -165,10 +166,10 @@
                         Выберите вашу физическая активность
                     </h3>
                     <div class="calculating__choose calculating__choose_big">
-                        <div id="low" class="p_small calculating__choose-item">Низкая активность </div>
-                        <div id="small"  class="p_small calculating__choose-item calculating__choose-item_active">Невысокая активность</div>
-                        <div id="medium" class="p_small calculating__choose-item">Умеренная активность</div>
-                        <div id="high" class="p_small calculating__choose-item">Высокая активность</div>
+                        <div data-ratio="1.2" id="low" class="p_small calculating__choose-item">Низкая активность </div>
+                        <div data-ratio="1.375" id="small"  class="p_small calculating__choose-item">Невысокая активность</div>
+                        <div data-ratio="1.55" id="medium" class="p_small calculating__choose-item">Умеренная активность</div>
+                        <div data-ratio="1.725" id="high" class="p_small calculating__choose-item">Высокая активность</div>
                     </div>
 
                     <div class="calculating__divider"></div>
@@ -178,7 +179,7 @@
                             Ваша суточная норма калорий:
                         </h3>
                         <div class="calculating__result">
-                            <span>2700</span> ккал
+                            <span></span>  ккал
                         </div>
                     </div>
                 </div>
@@ -281,5 +282,5 @@
             </div>
         </div>
 
-    <script type="text/javascript" src="./assets/js/vendors.c72f86cbe8f7128022e4.js"></script><script type="text/javascript" src="./assets/js/app.a5cc9e482adeae2e8be0.js"></script></body>
+    <script type="text/javascript" src="/assets/js/vendors.8f1d9696494d5fd05017.js"></script><script type="text/javascript" src="/assets/js/app.d5da07310cd22e3e43dc.js"></script></body>
 </html>
