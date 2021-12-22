@@ -37,7 +37,7 @@ function cards() {
         }
     }
 
-    getResource('http://localhost:3000/menu')
+    getResource('/menu')
         .then(data => {
             // use the syntax for object destructuring
             data.forEach(({src, alt, title, descr, price}) => {

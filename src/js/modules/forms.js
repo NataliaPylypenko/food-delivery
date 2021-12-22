@@ -34,7 +34,7 @@ function forms(formSelector) {
             const json = JSON.stringify(Object.fromEntries(formData.entries()));
 
             // sending data to the server
-            postData('http://localhost:3000/requests', json)
+            postData('/requests', json)
                 .then(data => {
                     showThanksModal(message.success);
                 })

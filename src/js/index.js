@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
         field: '.offer__slider-inner'
     });
     tabs('.tabheader__item', '.tabheader__items', '.tabcontent', 'tabheader__item_active');
-    timer('.timer', '2021-12-31');
+    timer('.timer', '2022-02-30');
 
 })
 

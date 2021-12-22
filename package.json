@@ -1,16 +1,19 @@
 {
-  "name": "food-delivery",
+  "name": "good-food-delivery",
   "version": "1.0.0",
-  "homepage": "food-delivery",
+  "homepage": "https://good-food-delivery.herokuapp.com/",
   "description": "food-delivery",
   "main": "./index.js",
   "scripts": {
     "dev": "webpack-dev-server --open --config ./build/webpack.dev.conf.js",
     "build": "webpack --config ./build/webpack.build.conf.js",
-    "watch": "webpack-dev-server --open --config ./build/webpack.dev.conf.js --watch",
+    "watch": "webpack-dev-server --open --config ./build/webpack.dev.conf.js --watch --port 3000",
+    "start": "node server.js",
+    "json-server": "json-server --watch db.json --port 3001",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
+  "proxy": "http://localhost:3001/",
   "browserslist": [
     "> 1%",
     "last 3 version"
@@ -30,7 +33,6 @@
     "cssnano": "^4.1.11",
     "file-loader": "^4.3.0",
     "html-webpack-plugin": "^3.2.0",
-    "json-server": "^0.17.0",
     "mini-css-extract-plugin": "^0.8.2",
     "node-sass": "^4.14.1",
     "postcss-loader": "^3.0.0",
@@ -43,6 +45,11 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.16.3",
+    "json-server": "^0.17.0",
     "gh-pages": "^3.2.3"
+  },
+  "engines": {
+    "node": "14.17.6",
+    "npm": "8.3.0"
   }
 }
